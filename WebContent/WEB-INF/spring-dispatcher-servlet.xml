@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:task="http://www.springframework.org/schema/task" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/task  
+http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<context:component-scan base-package="chat.java.*" />
+	
+	<mvc:resources location="/img/" mapping="/img/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/fonts/" mapping="/fonts/**" />
+	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/vendor/" mapping="/vendor/**" />
+	<mvc:resources location="/less/" mapping="/less/**" />
+	<mvc:resources location="/assets/" mapping="/assets/**" />
+	<mvc:resources location="/font-awesome/" mapping="/font-awesome/**" />
+	<mvc:annotation-driven />
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/jsp/" />
+      <property name="suffix" value=".jsp" />
+   </bean>
+	
+	<mvc:default-servlet-handler/>
+	
+	<bean id="loginService" class="chat.java.service.impl.LoginServiceImpl">
+		<property name="loginDao" ref="loginDao"></property>
+	</bean>
+
+	<bean id="loginDao" class="chat.java.dao.impl.LoginDaoImpl"/>
+	
+	
+	
+	<bean id="signUpService" class="chat.java.service.impl.SignUpServiceImpl">
+		<property name="signUpDao" ref="signUpDao"></property>
+	</bean>
+
+	<bean id="signUpDao" class="chat.java.dao.impl.SignUpDaoImpl"/>
+	
+	
+	<bean id="checkOnlineService" class="chat.java.service.impl.CheckOnlineServiceImpl">
+		<property name="checkOnlineDao" ref="checkOnlineDao"></property>
+	</bean>
+
+	<bean id="checkOnlineDao" class="chat.java.dao.impl.CheckOnlineDaoImpl"/>
+	
+
+	
+	
+	<bean id="insertChatSingleDataService" class="chat.java.service.impl.InsertChatSingleDataServiceImpl">
+		<property name="insertChatSingleDataDao" ref="insertChatSingleDataDao"></property>
+	</bean>
+
+	<bean id="insertChatSingleDataDao" class="chat.java.dao.impl.InsertChatSingleDataDaoImpl"/>
+	
+	
+	
+	
+	
+	<bean id="sendMessageService" class="chat.java.service.impl.SendMessageServiceImpl">
+		<property name="sendMessageDao" ref="sendMessageDao"></property>
+	</bean>
+
+	<bean id="sendMessageDao" class="chat.java.dao.impl.SendMessageDaoImpl"/>
+	
+	
+	
+	
+	<bean id="retrieveMessagesService" class="chat.java.service.impl.RetrieveMessagesServiceImpl">
+		<property name="retrieveMessagesDao" ref="retrieveMessagesDao"></property>
+	</bean>
+
+	<bean id="retrieveMessagesDao" class="chat.java.dao.impl.RetrieveMessagesDaoImpl"/>
+	
+	
+	
+
+	<bean id="chatRoomService" class="chat.java.service.impl.ChatRoomServiceImpl">
+		<property name="chatRoomDao" ref="chatRoomDao"></property>
+	</bean>
+
+	<bean id="chatRoomDao" class="chat.java.dao.impl.ChatRoomDaoImpl"/>
+	
+	
+	
+	
+	
+	
+	<bean id="sendMessageChatRoom" class="chat.java.service.impl.SendMessageChatRoomServiceImpl">
+		<property name="sendMessageChatRoomDao" ref="sendMessageChatRoomDao"></property>
+	</bean>
+
+	<bean id="sendMessageChatRoomDao" class="chat.java.dao.impl.SendMessageChatRoomDaoImpl"/>
+	
+	
+	
+	
+	<bean id="onlineUserService" class="chat.java.service.impl.OnlineUsersServiceImpl">
+		<property name="onlineUsersDao" ref="onlineUsersDao"></property>
+	</bean>
+
+	<bean id="onlineUsersDao" class="chat.java.dao.impl.OnlineUsersDaoImpl"/>
+	
+	
+
+</beans>
