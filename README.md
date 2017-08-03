@@ -26,10 +26,9 @@ This Chat Application is build using Spring Framework. Programming languages use
 4. If the webpage opens in eclipse browser, copy the link to your default broswer (Opera, Mozilla, Chrome or Edge), and add "login" to the end of the link.
     For example: In my case, I open: "http://localhost:8050/ChatApplication/login" on my browser.
 5. Login Page will appear. You can login using these 4 accounts:
-    1. Username: rajat; Password: rajat
-    2. Username: user1; Password: user1
-    3. Username: user2; Password: user2
-    4. Username: user3; Password: user3 or Create another account by clicking Sign Up.
+    1. Username: user1; Password: user1
+    2. Username: user2; Password: user2
+    3. Username: user3; Password: user3 or Create another account by clicking Sign Up.
     
 6. Now once you login, you can either chat with your friend or chat room (where everybody can chat).
 7. In chat with your friend, if your friend is not online, a message will be displayed that the person is not online, or else you can send messages to the person.
